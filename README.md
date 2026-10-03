@@ -23,3 +23,10 @@ The trade-off: units are fixed-length approximations (a month is always 30 days,
 - Deltas under one second in either direction return `just now`.
 - The formatter never reads the clock; you pass `now` explicitly. This makes every call deterministic.
 - Thresholds are tuned so that, e.g., 59 seconds reads `59 seconds`, not `1 minute`.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
