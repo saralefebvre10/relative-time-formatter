@@ -1,6 +1,6 @@
 {
   "name": "relative-time-formatter",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Formats a time delta into a human-readable relative string like '3 hours ago' or 'in 2 days' according to configurable locale and granularity rules.",
   "type": "module",
   "main": "src/index.js",
